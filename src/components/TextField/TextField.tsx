@@ -5,10 +5,12 @@ import { ITextField } from "./TextField.types";
 
 export const TextField: FC<ITextField> = ({ value, onChange }) => {
   return (
-    <Styled.TextField
-      placeholder={"Type here..."}
-      value={value}
-      onChange={onChange}
-    />
+    <Styled.TextFieldWrapper>
+      <Styled.TextField
+        placeholder={"Type here..."}
+        value={value}
+        onChange={onChange}
+      />
+    </Styled.TextFieldWrapper>
   );
 };

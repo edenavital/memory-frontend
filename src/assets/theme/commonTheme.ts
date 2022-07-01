@@ -3,7 +3,7 @@ import { darkTheme } from "./darkTheme";
 // import { CSSProperties } from "@mui/styles";
 
 interface ICommonTypography {
-  fontSize: number;
+  fontSize: string;
   fontFamily: string;
 }
 
@@ -34,7 +34,7 @@ export { styled, css, createGlobalStyle, keyframes, ThemeProvider };
 
 const commonTheme: ICommonTheme = {
   typography: {
-    fontSize: 18,
+    fontSize: "18px",
     fontFamily: `'Gilroy-Bold', sans-serif !important`,
   },
   palette: darkTheme,

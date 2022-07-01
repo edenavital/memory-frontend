@@ -8,6 +8,7 @@ export const ButtonWrapper = styled("div")({
   position: "relative",
   width: "fit-content",
   overflow: "hidden",
+  padding: 5,
 });
 
 export const Button = styled(MuiButton)(({ theme }) => {

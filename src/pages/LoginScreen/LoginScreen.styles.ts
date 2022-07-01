@@ -6,6 +6,8 @@ import { ReactComponent as LoginWrapperTwo } from "../../assets/icons/login-wrap
 import { ReactComponent as LoginWrapperThree } from "../../assets/icons/login-wrapper-three.svg";
 import { Button } from "../../components/Button";
 
+import { TextField } from "../../components/TextField";
+
 export const MyComponent = styled("div")((props) => {
   console.log("p", props);
   return {
@@ -37,4 +39,8 @@ export const StyledLoginWrapperThree = styled(LoginWrapperThree)({
 
 export const SubmitButton = styled(Button)({
   marginTop: 150,
+});
+
+export const TextNickname = styled(TextField)({
+  margin: 15,
 });
