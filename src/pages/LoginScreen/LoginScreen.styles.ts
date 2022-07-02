@@ -37,9 +37,7 @@ export const StyledLoginWrapperThree = styled(LoginWrapperThree)({
   position: "absolute",
 });
 
-export const SubmitButton = styled(Button)({
-  marginTop: 150,
-});
+export const SubmitButton = styled(Button)({});
 
 export const TextNickname = styled(TextField)({
   margin: 15,
