@@ -6,12 +6,13 @@ import { IButton, ButtonTypes } from "./Button.types";
 export const Button: FC<IButton> = ({
   children,
   type = ButtonTypes.BUTTON,
+  disabled,
 }) => {
   return (
     <Styled.ButtonWrapper>
       <Styled.ButtonOneLayer />
       <Styled.ButtonTwoLayer />
-      <Styled.Button variant="contained" type={type}>
+      <Styled.Button variant="contained" type={type} disabled={disabled}>
         {children}
       </Styled.Button>
     </Styled.ButtonWrapper>

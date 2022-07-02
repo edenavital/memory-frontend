@@ -3,11 +3,15 @@ import ReactDOM from "react-dom/client";
 
 import { generateTheme, ThemeProvider } from "./assets/theme";
 import { LoginScreen } from "./pages/LoginScreen";
+import { MenuScreen } from "./pages/MenuScreen";
+
 import { Layout } from "./components/Layout";
 import { GlobalStyle } from "./assets/theme/global";
 import reportWebVitals from "./reportWebVitals";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ProtectedRoutes } from "./pages/ProtectedRoutes/ProtectedRoutes";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -21,7 +25,14 @@ root.render(
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Layout>
-          <LoginScreen />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<LoginScreen />} />
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/menu" element={<MenuScreen />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
         </Layout>
       </ThemeProvider>
     </Provider>

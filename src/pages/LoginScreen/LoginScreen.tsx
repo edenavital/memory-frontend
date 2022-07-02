@@ -6,11 +6,13 @@ import { Typography } from "../../components/Typography";
 import { ButtonTypes } from "../../components/Button";
 import { globalNickname } from "../../redux/features/global";
 import { useAppDispatch } from "../../redux/hooks";
-
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../consts";
 // import { Card } from "../../components/Card";
 // import { TextField } from "../../components/TextField";
 
 export const LoginScreen: FC<ILoginScreen> = () => {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [nickname, setNickname] = useState<string>("");
 
@@ -21,6 +23,7 @@ export const LoginScreen: FC<ILoginScreen> = () => {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     dispatch(globalNickname(nickname));
+    navigate(ROUTES.MENU);
   };
 
   return (
@@ -39,7 +42,12 @@ export const LoginScreen: FC<ILoginScreen> = () => {
         <Typography>Enter your name</Typography>
         <Styled.TextNickname onChange={updateName} value={nickname} />
 
-        <Styled.SubmitButton type={ButtonTypes.SUBMIT}>OK</Styled.SubmitButton>
+        <Styled.SubmitButton
+          disabled={nickname.length <= 0}
+          type={ButtonTypes.SUBMIT}
+        >
+          OK
+        </Styled.SubmitButton>
       </form>
 
       <Styled.StyledLoginWrapperOne />

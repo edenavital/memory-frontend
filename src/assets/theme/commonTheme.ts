@@ -11,6 +11,7 @@ interface IPalette {
   primary: {
     contrastText: string;
     main: string;
+    link: string;
   };
 }
 
@@ -28,9 +29,10 @@ const {
   createGlobalStyle,
   keyframes,
   ThemeProvider,
+  useTheme,
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<ICommonTheme>;
 
-export { styled, css, createGlobalStyle, keyframes, ThemeProvider };
+export { styled, css, createGlobalStyle, keyframes, ThemeProvider, useTheme };
 
 const commonTheme: ICommonTheme = {
   typography: {
