@@ -1,4 +1,6 @@
-export const ROUTES = {
-  ROOT: "/",
-  MENU: "/menu",
-} as const;
+export enum ROUTES {
+  ROOT = "/",
+  MENU = "/menu",
+  LEVEL = "/level",
+  GAME = "/game",
+}

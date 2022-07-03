@@ -20,6 +20,7 @@ export interface ICommonTheme {
   palette: IPalette;
   mixins: {
     genericWrapper: object;
+    genericFlex: object;
   };
 }
 
@@ -48,6 +49,11 @@ const commonTheme: ICommonTheme = {
       justifyContent: "center",
       alignItems: "center",
       flexDirection: "column",
+    },
+    genericFlex: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
     },
   },
 };

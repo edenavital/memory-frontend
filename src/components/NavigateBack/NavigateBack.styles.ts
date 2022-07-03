@@ -4,11 +4,10 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Typography } from "../Typography";
 export const NavigateBackWrapper = styled("div")(({ theme }) => {
   return {
+    width: "100%",
     marginLeft: 10,
     display: "inline-flex",
-    justifyContent: "center",
     alignItems: "center",
-    width: "fit-content",
     height: "50px",
   };
 });

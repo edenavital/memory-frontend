@@ -7,12 +7,18 @@ export const Button: FC<IButton> = ({
   children,
   type = ButtonTypes.BUTTON,
   disabled,
+  onClick,
 }) => {
   return (
     <Styled.ButtonWrapper>
       <Styled.ButtonOneLayer />
       <Styled.ButtonTwoLayer />
-      <Styled.Button variant="contained" type={type} disabled={disabled}>
+      <Styled.Button
+        variant="contained"
+        type={type}
+        disabled={disabled}
+        onClick={onClick}
+      >
         {children}
       </Styled.Button>
     </Styled.ButtonWrapper>

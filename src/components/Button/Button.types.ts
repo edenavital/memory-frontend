@@ -10,4 +10,5 @@ export interface IButton {
   children: ReactNode;
   type?: ButtonTypes;
   disabled?: boolean;
+  onClick?: () => void;
 }

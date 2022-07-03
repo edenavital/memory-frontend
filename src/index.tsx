@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { generateTheme, ThemeProvider } from "./assets/theme";
 import { LoginScreen } from "./pages/LoginScreen";
 import { MenuScreen } from "./pages/MenuScreen";
-
+import { GameScreen } from "./pages/GameScreen";
 import { Layout } from "./components/Layout";
 import { GlobalStyle } from "./assets/theme/global";
 import reportWebVitals from "./reportWebVitals";
@@ -12,6 +12,8 @@ import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProtectedRoutes } from "./pages/ProtectedRoutes/ProtectedRoutes";
+import { LevelScreen } from "./pages/LevelScreen";
+import { ROUTES } from "./consts";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -27,9 +29,11 @@ root.render(
         <Layout>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<LoginScreen />} />
+              <Route path={ROUTES.ROOT} element={<LoginScreen />} />
               <Route element={<ProtectedRoutes />}>
-                <Route path="/menu" element={<MenuScreen />} />
+                <Route path={ROUTES.MENU} element={<MenuScreen />} />
+                <Route path={ROUTES.LEVEL} element={<LevelScreen />} />
+                <Route path={ROUTES.GAME} element={<GameScreen />} />
               </Route>
             </Routes>
           </BrowserRouter>
